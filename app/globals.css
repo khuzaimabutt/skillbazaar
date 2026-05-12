@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+
+  --brand-primary: #0D9488;
+  --brand-primary-dark: #0F766E;
+  --brand-accent: #F97316;
+  --brand-accent-dark: #EA6C0A;
+}
+
+* {
+  border-color: #E5E7EB;
+}
+
+html,
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Instrument Serif', serif;
+  letter-spacing: -0.01em;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-brand-primary-dark transition-colors;
+  }
+  .btn-cta {
+    @apply bg-brand-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-accent-dark transition-colors;
+  }
+  .btn-secondary {
+    @apply bg-white border border-brand-primary text-brand-primary px-4 py-2 rounded-lg font-medium hover:bg-brand-primary/5 transition-colors;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-brand-primary px-4 py-2 rounded-lg font-medium hover:bg-brand-primary/5 transition-colors;
+  }
+  .card-base {
+    @apply bg-white border border-neutral-200 rounded-xl;
+  }
+  .card-hover {
+    @apply hover:shadow-md hover:border-neutral-300 transition-all;
+  }
+}
+
+/* Hero subtle background pattern */
+.hero-bg {
+  background-color: #FFFFFF;
+  background-image: radial-gradient(circle at 1px 1px, rgba(13, 148, 136, 0.08) 1px, transparent 0);
+  background-size: 40px 40px;
+}
